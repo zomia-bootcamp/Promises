@@ -20,6 +20,9 @@ myExecutor() should:
 4. At the bottom of your app.js file, log orderPromise to the console.
 
 5. Run your code in the bash terminal using the command `node ./exercises/myFirstPromise.js`
+
+6. When you'r done, paste the final code in chatGPT and try to understant the full process you have created.
+
 */
 
 const inventory = {
