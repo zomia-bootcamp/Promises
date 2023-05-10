@@ -90,7 +90,7 @@ In our example, `myFirstPromise` resolves or rejects based on a simple condition
 
 ## Exercises
 
-Follow the instructions in [myFirstPromise.js](./exercises/myFirstPromise.js
+Follow the instructions in [myFirstPromise.js](./exercises/myFirstPromise.js)
 
 
 
