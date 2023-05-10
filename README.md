@@ -127,3 +127,31 @@ Now, let's delve deeper into `setTimeout()`.
 
 Follow the instructions in [setTimeout.js](./exercises/setTimeout.js)
 
+## Consuming Promises (.then() & .catch())
+
+The initial state of an asynchronous promise is pending, but we know it will eventually settle. To specify what should happen when the promise settles, we can use the `.then()` method of Promise objects. It allows us to define the desired actions when the promise resolves or rejects.
+
+![dishwasher example](https://content.codecademy.com/courses/updated_images/Art-347_v1_Updated_1-01.svg)
+
+Using our dishwasher analogy:
+- If the promise rejects (dirty dishes), we'll add soap and run the dishwasher again.
+- If the promise fulfills (clean dishes), we'll put the dishes away.
+
+`.then()` is a higher-order function that takes two callback functions as arguments, often referred to as handlers. The first handler, called onFulfilled, handles the success case when the promise resolves. The second handler, called onRejected, handles the failure case when the promise rejects.
+
+We can choose to provide one, both, or neither of the handlers, depending on our needs. However, it's essential to be cautious, as omitting the appropriate handler can make debugging challenging. If a handler is not provided, `.then()` will return a new promise with the same settled value as the original promise.
+
+An important aspect of `.then()` is that it always returns a promise. We'll explore this further in a later exercise to understand its significance.
+
+To handle a successful promise, or a promise that has resolved, we use the `.then()` method on the promise. We pass in a success handler callback function as an argument to `.then()`:
+
+```javascript
+myPromise.then(successHandler);
+```
+
+### Expirement
+
+Open [prom.js](./expirement/prom.js), and follow the instructions.
+
+
+
