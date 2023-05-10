@@ -96,7 +96,7 @@ Follow the instructions in [myFirstPromise.js](./exercises/myFirstPromise.js)
 
 ### Expirement
 
-Run the code in [setTimeOut.js](./Experiment/setTimeIut.js), and follow the additional instructions.
+Run the code in [setTimeout.js](./Experiment/setTimeout.js), and follow the additional instructions.
 
 ##### What does setTimeout() do?
 The Node `setTimeout()` function allows you to schedule tasks to be performed after a delay. This is useful for simulating asynchronous operations that return promises.
