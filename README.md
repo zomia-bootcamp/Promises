@@ -88,10 +88,21 @@ Let’s break down what’s happening above:
 
 In our example, `myFirstPromise` resolves or rejects based on a simple condition, but, in practice, promises settle based on the results of asynchronous operations. For example, a database request may fulfill with the data from a query or reject with an error thrown. In this exercise, we’ll construct promises which resolve synchronously to more easily understand how they work.
 
-## Exercises
+### Exercises
 
 Follow the instructions in [myFirstPromise.js](./exercises/myFirstPromise.js)
 
+## setTimeOut()
 
+### Expirement
+
+Run the code in [setTimeOut.js](./Experiment/setTimeIut.js), and follow the additional instructions.
+
+##### What does setTimeOut() do?
+The Node `setTimeout()` function allows you to schedule tasks to be performed after a delay. This is useful for simulating asynchronous operations that return promises.
+
+Instead of constructing promises, you'll primarily be working with promises returned to you as the result of an asynchronous operation. These promises start in a pending state and eventually settle.
+
+For simulation purposes, we'll provide you with functions that return promises that settle after a certain time. To achieve this, we'll use `setTimeout()`, which is a Node API (similar APIs are available in web browsers). `setTimeout()` takes two parameters: a callback function and a delay in milliseconds.
 
 
