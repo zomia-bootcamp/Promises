@@ -92,17 +92,38 @@ In our example, `myFirstPromise` resolves or rejects based on a simple condition
 
 Follow the instructions in [myFirstPromise.js](./exercises/myFirstPromise.js)
 
-## setTimeOut()
+## setTimeout()
 
 ### Expirement
 
 Run the code in [setTimeOut.js](./Experiment/setTimeIut.js), and follow the additional instructions.
 
-##### What does setTimeOut() do?
+##### What does setTimeout() do?
 The Node `setTimeout()` function allows you to schedule tasks to be performed after a delay. This is useful for simulating asynchronous operations that return promises.
 
 Instead of constructing promises, you'll primarily be working with promises returned to you as the result of an asynchronous operation. These promises start in a pending state and eventually settle.
 
-For simulation purposes, we'll provide you with functions that return promises that settle after a certain time. To achieve this, we'll use `setTimeout()`, which is a Node API (similar APIs are available in web browsers). `setTimeout()` takes two parameters: a callback function and a delay in milliseconds.
+For simulation purposes, we'll provide you with functions that return promises that settle after a certain time. To achieve this, we'll use `setTimeout()`, which is a Node API (similar APIs are available in web browsers).
 
+Let’s look at how we’ll be using setTimeout() to construct asynchronous promises:
+
+```js
+
+const returnPromiseFunction = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(( ) => {resolve('I resolved!')}, 1000);
+  });
+};
+ 
+const prom = returnPromiseFunction();
+
+```
+
+In the example code, we called `returnPromiseFunction()`, which returned a promise. We assigned that promise to the variable `prom`. Similar to the asynchronous promises you may encounter in real-world scenarios, `prom` will initially have a status of pending.
+
+Now, let's delve deeper into `setTimeout()`.
+
+### Exercises
+
+Follow the instructions in [setTimeout.js](./exercises/setTimeout.js)
 
