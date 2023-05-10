@@ -153,5 +153,46 @@ myPromise.then(successHandler);
 
 Open [prom.js](./expirement/prom.js), and follow the instructions.
 
+---
+
+In typical promise consumption, we don't know beforehand if a promise will successfully resolve or encounter an error. Therefore, we need to handle both scenarios by providing logic for each case.
+
+To handle both the success and failure outcomes of a promise, we can use the `.then()` method and pass two separate callback functions: one for success (resolve) and one for failure (reject).
+
+
+
+```js
+let prom = new Promise((resolve, reject) => {
+  let num = Math.random();
+  if (num < .5 ){
+    resolve('Yay!');
+  } else {
+    reject('Ohhh noooo!');
+  }
+});
+ 
+const handleSuccess = (resolvedValue) => {
+  console.log(resolvedValue);
+};
+ 
+const handleFailure = (rejectionReason) => {
+  console.log(rejectionReason);
+};
+ 
+prom.then(handleSuccess, handleFailure);
+```
+
+Let’s break down what’s happening in the example code:
+
+* `prom` is a promise which will randomly either resolve with `'Yay!'` or reject with `'Ohhh noooo!'`.
+* We pass two handler functions to `.then()`. The first will be invoked with `'Yay!'` if the promise resolves, and the second will be invoked with `'Ohhh noooo!'` if the promise rejects.
+*Note: The success callback is sometimes called the “success handler function” or the `onFulfilled` function. The failure callback is sometimes called the “failure handler function” or the `onRejected` function.*
+
+Let’s write some success and failure callbacks!
+
+### Exercises
+
+Follow the instructions given in [setTimeout.js](./exercises/setTimeout.js)
+
 
 
