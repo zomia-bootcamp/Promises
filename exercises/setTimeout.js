@@ -14,3 +14,16 @@ Invoke setTimeout() with your `useSTO()` function as the first argument and a nu
 <your answer>
 
 4. After comleting your answer, run your code, did you get it right?
+
+*/
+
+
+console.log("This is the first line of code in app.js.");
+// Keep the line above as the first line of code
+
+// Write your code here:
+
+
+
+// Keep the line below as the last line of code:
+console.log("This is the last line of code in app.js.");
