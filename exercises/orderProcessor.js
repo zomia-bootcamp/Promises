@@ -1,3 +1,4 @@
+import { checkInventory } from "../lib/inventory.js";
 /*
 
 1. Take a look at the provided code.
@@ -26,11 +27,19 @@ Pass into .then() the two handlers you wrote as callback functions.
 
 */
 
-
-import {checkInventory} from '../lib/inventory.js'
-
-const order = [['sunglasses', 1], ['bags', 2]];
+const order = [
+  ["sunglasses", 1],
+  ["bags", 2],
+];
 
 // Write your code below:
 
+const handleSuccess = (resolvedValue) => {
+  console.log(resolvedValue);
+};
 
+const handleFailure = (rejectReason) => {
+  console.log(rejectReason);
+};
+
+checkInventory(order).then(handleSuccess, handleFailure);
