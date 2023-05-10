@@ -8,7 +8,7 @@ If every item in the order is in stock, that promise resolves with the value "Th
 Otherwise, the promise rejects with the value "We're sorry. Your order could not be completed because some items are sold out".
 We used `setTimeout()` to ensure that the `checkInventory()` promise settles asynchronously.
 
-Look at the lib/inventory.js file to see how it works. 
+Look at the /lib/inventory.js file to see how it works. 
 
 2. Write a function, handleSuccess(). 
 It should have one parameter, representing a resolved value. 
@@ -27,7 +27,7 @@ Pass into .then() the two handlers you wrote as callback functions.
 */
 
 
-import {checkInventory} from './lib/inventory.js'
+import {checkInventory} from '../lib/inventory.js'
 
 const order = [['sunglasses', 1], ['bags', 2]];
 
