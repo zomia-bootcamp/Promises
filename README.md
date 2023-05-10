@@ -15,28 +15,35 @@
 ## Introduction
 In web development, asynchronous programming is often considered a challenging topic.
 
-An **asynchronous** operation allows the computer to continue with other tasks while waiting for the asynchronous operation to complete. Asynchronous programming ensures that time-consuming operations don't block the entire program.
+## Asynchronous Operations
 
-Asynchronicity is a common concept in our daily lives. For instance, cleaning a house involves asynchronous operations like a dishwasher washing dishes or a washing machine cleaning clothes. While waiting for these operations to complete, we can perform other tasks.
+### Self Study
 
-Similarly, web development utilizes asynchronous operations such as making network requests or querying databases. JavaScript allows us to execute other tasks while waiting for these operations to complete.
+**Asynchronous** operations let the computer do other tasks while waiting for one task to finish. It helps prevent the whole program from getting blocked by time-consuming tasks.
 
-This lesson will teach you how modern JavaScript handles asynchronicity using the `Promise` object, introduced with ES6. Let's get started!
+Asynchronicity is like when we clean a house. We can use a dishwasher or a washing machine, which work asynchronously. While they're doing their job, we can do other tasks.
+
+In web development, we use asynchronicity to make network requests or query databases. JavaScript lets us do other things while waiting for these operations to finish.
+
+This lesson will teach you how modern JavaScript handles asynchronicity using the `Promise` object, introduced in ES6. Let's get started!
+
+
+Watch this [video](https://www.youtube.com/watch?v=8aGhZQkoFbQ) for more clarity.
 
 
 ## What is a Promise?
-Promises are objects that represent the eventual outcome of an asynchronous operation. A `Promise` object can be in one of three states:
+Promises are objects that represent what will happen when an asynchronous operation finishes. A `Promise` object can be in three states:
 
-* **Pending:** The initial state— the operation has not completed yet.
-* **Fulfilled:** The operation has completed successfully and the promise now has a resolved value. For example, a request’s promise might resolve with a JSON object as its value.
-* **Rejected:** The operation has failed and the promise has a reason for the failure. This reason is usually an `Error` of some kind.
+- **Pending:** The operation is still going on and hasn't finished yet.
+- **Fulfilled:** The operation completed successfully, and the promise now has a result. For example, a promise from a request might have a JSON object as its result.
+- **Rejected:** The operation failed, and the promise has a reason for the failure. This reason is usually an `Error`.
 
 We refer to a promise as *settled8 if it is no longer pending— it is either fulfilled or rejected. Let’s think of a dishwasher as having the states of a promise:
 
 ![dishwasher diagram](https://content.codecademy.com/courses/learn-javascript-promises/Art-346-01.svg)
 
 * **Pending:** The dishwasher is running but has not completed the washing cycle.
-* **Fulfilled:**The dishwasher has completed the washing cycle and is full of clean dishes.
+* **Fulfilled:** The dishwasher has completed the washing cycle and is full of clean dishes.
 * **Rejected:** The dishwasher encountered a problem (it didn’t receive soap!) and returns unclean dishes.
 
 If our dishwashing promise is fulfilled, we’ll be able to perform related tasks, such as unloading the clean dishes from the dishwasher. If it’s rejected, we can take alternate steps, such as running it again with soap or washing the dishes by hand.
@@ -56,7 +63,7 @@ The `Promise` constructor method takes a function parameter called the *executor
 The executor function has two function parameters, usually referred to as the `resolve()` and `reject()` functions. The `resolve()` and `reject()` functions aren’t defined by the programmer. When the Promise constructor runs, JavaScript will pass its own `resolve()` and `reject()` functions into the executor function.
 
 * `resolve` is a function with one argument. Under the hood, if invoked, `resolve()` will change the promise’s status from `pending` to `fulfilled`, and the promise’s resolved value will be set to the argument passed into `resolve()`.
-* `reject  is a function that takes a reason or error as an argument. Under the hood, if invoked, `reject()` will change the promise’s status from `pending` to `rejected`, and the promise’s rejection reason will be set to the argument passed into `reject()`.
+* `reject`  is a function that takes a reason or error as an argument. Under the hood, if invoked, `reject()` will change the promise’s status from `pending` to `rejected`, and the promise’s rejection reason will be set to the argument passed into `reject()`.
 
 Let’s look at an example executor function in a Promise constructor:
 
@@ -83,7 +90,7 @@ In our example, `myFirstPromise` resolves or rejects based on a simple condition
 
 ## Exercises
 
-Follow the 
+Follow the instructions in [myFirstPromise.js](./exercises/myFirstPromise.js
 
 
 
