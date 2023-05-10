@@ -1,0 +1,23 @@
+{
+  "name": "promises",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "- Understand the anatomy of a Promise\r - Use Promises to manage asynchronous operations\r - Correctly use a Promise chain\r - Handle errors while working with Promises",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zomia-bootcamp/Promises.git"
+  },
+  "author": "Hadas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zomia-bootcamp/Promises/issues"
+  },
+  "homepage": "https://github.com/zomia-bootcamp/Promises#readme"
+}
