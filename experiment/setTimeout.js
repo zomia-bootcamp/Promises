@@ -12,10 +12,10 @@ In your own words, describe the way this code ran:
 
 <your answer>
 
-What do you think caused this behaviour?
+What do you think caused this behavior?
 
 <your answer>
 
-Use chatGpt or your favorite search engine to undrestand the setTimeOut method.
+Use chatGpt or your favorite search engine to understand the setTimeOut method.
 Focus on understanding the syntax and the process
 */
