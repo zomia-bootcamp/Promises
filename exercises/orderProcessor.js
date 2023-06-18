@@ -11,17 +11,16 @@ We used `setTimeout()` to ensure that the `checkInventory()` promise settles asy
 
 Look at the /lib/inventory.js file to see how it works. 
 
-2. Write a function, handleSuccess(). 
+2. Invoke checkInventory() with order. 
+This will return a promise. Attach a .then() and .catch() to this. 
+
+3. Write an anonymous function, in the .then() success handler. 
 It should have one parameter, representing a resolved value. 
-Inside the body of handleSuccess(), log the parameter to the console.
+Inside the body, log the parameter to the console.
 
-3. Write a function, handleFailure().
+4. Write an anonymous function, in the .catch() failure handler. 
 It should have one parameter, representing a rejection reason. 
-Inside the body of handleFailure(), log the parameter to the console.
-
-4. Invoke checkInventory() with order. 
-This will return a promise. Attach a .then() function to this. 
-Pass into .then() the two handlers you wrote as callback functions.
+Inside the body, log the parameter to the console.
 
 5. Run your code
 
@@ -34,12 +33,4 @@ const order = [
 
 // Write your code below:
 
-const handleSuccess = (resolvedValue) => {
-  console.log(resolvedValue);
-};
 
-const handleFailure = (rejectReason) => {
-  console.log(rejectReason);
-};
-
-checkInventory(order).then(handleSuccess, handleFailure);

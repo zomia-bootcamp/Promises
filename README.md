@@ -38,7 +38,7 @@ Promises are objects that represent what will happen when an asynchronous operat
 - **Fulfilled:** The operation completed successfully, and the promise now has a result. For example, a promise from a request might have a JSON object as its result.
 - **Rejected:** The operation failed, and the promise has a reason for the failure. This reason is usually an `Error`.
 
-We refer to a promise as *settled8 if it is no longer pending— it is either fulfilled or rejected. Let’s think of a dishwasher as having the states of a promise:
+We refer to a promise as *settled* if it is no longer pending— it is either fulfilled or rejected. Let’s think of a dishwasher as having the states of a promise:
 
 ![dishwasher diagram](https://content.codecademy.com/courses/learn-javascript-promises/Art-346-01.svg)
 
@@ -54,8 +54,10 @@ All promises eventually settle, enabling us to write logic for what to do if the
 Let’s construct a promise! To create a new `Promise` object, we use the new keyword and the `Promise` constructor method:
 
 ```js
-const executorFunction = (resolve, reject) => { };
-const myFirstPromise = new Promise(executorFunction);
+
+const myFirstPromise = new Promise((resolve, reject)=>{
+  //logic
+});
 ```
 
 The `Promise` constructor method takes a function parameter called the *executor function* which runs automatically when the constructor is called. The executor function generally starts an asynchronous operation and dictates how the promise should be settled.
@@ -68,21 +70,20 @@ The executor function has two function parameters, usually referred to as the `r
 Let’s look at an example executor function in a Promise constructor:
 
 ```js
-const executorFunction = (resolve, reject) => {
+const myFirstPromise = new Promise(resolve, reject) => {
   if (someCondition) {
       resolve('I resolved!');
   } else {
       reject('I rejected!'); 
   }
 }
-const myFirstPromise = new Promise(executorFunction);
+
 ```
 
 Let’s break down what’s happening above:
 
 * We declare a variable `myFirstPromise`
 * `myFirstPromise` is constructed using `new Promise()` which is the `Promise` constructor method.
-* `executorFunction()` is passed to the constructor and has two functions as parameters: `resolve` and `reject`.
 * If `someCondition` evaluates to true, we invoke `resolve()` with the string `'I resolved!'`
 * If not, we invoke `reject()` with the string `'I rejected!'`
 
@@ -94,9 +95,9 @@ Follow the instructions in [myFirstPromise.js](./exercises/myFirstPromise.js)
 
 ## setTimeout()
 
-### Expirement
+### Experiment
 
-Run the code in [setTimeout.js](./Experiment/setTimeout.js), and follow the additional instructions.
+Run the code in [setTimeout.js](./experiment/setTimeout.js), and follow the additional instructions.
 
 ##### What does setTimeout() do?
 The Node `setTimeout()` function allows you to schedule tasks to be performed after a delay. This is useful for simulating asynchronous operations that return promises.
@@ -109,13 +110,13 @@ Let’s look at how we’ll be using setTimeout() to construct asynchronous prom
 
 ```js
 
-const returnPromiseFunction = () => {
-  return new Promise((resolve, reject) => {
-    setTimeout(( ) => {resolve('I resolved!')}, 1000);
-  });
-};
- 
-const prom = returnPromiseFunction();
+const returnPromise =  new Promise((resolve, reject) => {
+		setTimeout(() => {
+			resolve('I resolved!')
+		}, 1000)
+	})
+
+console.log(returnPromise)
 
 ```
 
@@ -127,7 +128,7 @@ Now, let's delve deeper into `setTimeout()`.
 
 Follow the instructions in [setTimeout.js](./exercises/setTimeout.js)
 
-## Consuming Promises (.then() & .catch())
+## Consuming Promises .then() & .catch()
 
 The initial state of an asynchronous promise is pending, but we know it will eventually settle. To specify what should happen when the promise settles, we can use the `.then()` method of Promise objects. It allows us to define the desired actions when the promise resolves or rejects.
 
@@ -151,13 +152,13 @@ myPromise.then(successHandler);
 
 ### Expirement
 
-Open [prom.js](./expirement/prom.js), and follow the instructions.
+Open [prom.js](./experiment/prom.js), and follow the instructions.
 
 ---
 
 In typical promise consumption, we don't know beforehand if a promise will successfully resolve or encounter an error. Therefore, we need to handle both scenarios by providing logic for each case.
 
-To handle both the success and failure outcomes of a promise, we can use the `.then()` method and pass two separate callback functions: one for success (resolve) and one for failure (reject).
+To handle both the success and failure outcomes of a promise, we can use the `.catch()` method and pass a separate callback functions for failure (reject).
 
 
 
@@ -171,21 +172,17 @@ let prom = new Promise((resolve, reject) => {
   }
 });
  
-const handleSuccess = (resolvedValue) => {
-  console.log(resolvedValue);
-};
- 
-const handleFailure = (rejectionReason) => {
-  console.log(rejectionReason);
-};
- 
-prom.then(handleSuccess, handleFailure);
+prom.then(res => {
+  console.log(res)
+  }).catch(err => {
+    console.log(err)
+    });
 ```
 
 Let’s break down what’s happening in the example code:
 
 * `prom` is a promise which will randomly either resolve with `'Yay!'` or reject with `'Ohhh noooo!'`.
-* We pass two handler functions to `.then()`. The first will be invoked with `'Yay!'` if the promise resolves, and the second will be invoked with `'Ohhh noooo!'` if the promise rejects.
+* We use two handler functions `.then()` and `.catch()`. The first will be invoked with `'Yay!'` if the promise resolves, and the second will be invoked with `'Ohhh noooo!'` if the promise rejects.
 *Note: The success callback is sometimes called the “success handler function” or the `onFulfilled` function. The failure callback is sometimes called the “failure handler function” or the `onRejected` function.*
 
 Let’s write some success and failure callbacks!
@@ -193,6 +190,3 @@ Let’s write some success and failure callbacks!
 ### Exercises
 
 Follow the instructions given in [orderProcessor.js](./exercises/orderProcessor.js)
-
-
-
