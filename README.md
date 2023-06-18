@@ -29,6 +29,9 @@ This lesson will teach you how modern JavaScript handles asynchronicity using th
 
 
 Watch this [video](https://www.youtube.com/watch?v=8aGhZQkoFbQ) for more clarity.
+While watching, try to answer the following question:
+What is the difference between synchronous and asynchronous code execution in JavaScript.
+ 
 
 
 ## What is a Promise?
