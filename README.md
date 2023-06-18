@@ -192,7 +192,7 @@ Let’s write some success and failure callbacks!
 
 ### Exercises
 
-Follow the instructions given in [checkInventory.js](./exercises/checkInventory.js)
+Follow the instructions given in [orderProcessor.js](./exercises/orderProcessor.js)
 
 
 
