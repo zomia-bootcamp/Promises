@@ -8,6 +8,7 @@ const delayedHello = () => {
 setTimeout(delayedHello, 2000);
 
 /*
+
 In your own words, describe the way this code ran:
 
 <your answer>

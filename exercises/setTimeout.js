@@ -25,7 +25,11 @@ console.log("This is the first line of code in app.js.");
 
 // Write your code here:
 
+const useSTO =() =>{
+    console.log("I am using  ")
+}
 
+setTimeout(useSTO,1000)
 
     
 // Keep the line below as the last line of code:
