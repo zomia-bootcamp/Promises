@@ -5,7 +5,7 @@ const delayedHello = () => {
   console.log('Hi! This is an asynchronous greeting!');
 };
  
-setTimeout(delayedHello, 2000);
+setTimeout(delayedHello, 8000);
 
 /*
 In your own words, describe the way this code ran:
