@@ -27,3 +27,33 @@ const inventory = {
 };
 
 // Write your code below:
+const myFirstPromise = new Promise((resolve ,reject) => {
+ if(inventory.sunglasses > 0){
+ resolve('Sunglasses order processed')
+}else{
+  reject('That item is sold out.')
+}
+});
+console.log(myFirstPromise);
+
+
+// const mySecondPromise = new Promise((resolve, reject) => {
+// 	if (inventory.pants > 0) {
+// 		resolve('pants order processed')
+// 	} else {
+// 		reject('pants is sold out.')
+// 	}
+// })
+// console.log(mySecondPromise);
+
+
+
+// const myThirdPromise = new Promise((resolve, reject) => {
+// 	if (inventory.bags >= 0) {
+// 		resolve('bags order processed')
+// 	} else {
+// 		reject('bags is sold out.')
+// 	}
+// })
+// console.log(myThirdPromise);
+

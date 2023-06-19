@@ -24,7 +24,10 @@ console.log("This is the first line of code in app.js.");
 
 
 // Write your code here:
-
+const useSTO = () => {
+    console.log('This can be any string you want.')
+}
+ setTimeout(useSTO, 1000)
 
 
     
