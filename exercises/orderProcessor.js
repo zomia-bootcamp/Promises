@@ -34,3 +34,17 @@ const order = [
 // Write your code below:
 
 
+
+checkInventory(order).then((res) => {
+console.log(res)
+})
+
+.catch((err)=>{
+console.log(err)
+})
+
+
+// const success = (res) => {
+// 	inventory.item[0](res).forEach((v) => console.log(v))
+// }
+// checkInventory.than(success).catch((err) => console.log(err))
