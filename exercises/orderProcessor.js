@@ -34,3 +34,9 @@ const order = [
 // Write your code below:
 
 
+checkInventory(order).then((res) => {
+console.log(res)
+})
+checkInventory(order).catch((err) => {
+console.log(err)
+})
