@@ -34,3 +34,18 @@ const order = [
 // Write your code below:
 
 
+checkInventory(order)
+	.then((resolvedValue) => {
+		console.log(resolvedValue)
+	})
+	.catch((rejectionReason) => {
+		console.log(rejectionReason)
+	})
+
+	.then((resolvedValue) => {
+		console.log(resolvedValue)
+	})
+
+	.catch((rejectionReason) => {
+		console.log(rejectionReason)
+	})
