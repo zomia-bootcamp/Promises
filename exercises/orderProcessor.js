@@ -27,10 +27,10 @@ Inside the body, log the parameter to the console.
 */
 
 const order = [
-  ["sunglasses", 1],
+  ["flowers", 1],
   ["bags", 2],
 ];
 
 // Write your code below:
 
-
+checkInventory(order).then((res) => console.log(res)).catch((err) => console.log(err));
