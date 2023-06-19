@@ -27,3 +27,15 @@ const inventory = {
 };
 
 // Write your code below:
+
+
+
+const myPromise = new Promise((resolve, reject) => {
+	  if (inventory.sunglasses > 0) {
+		  resolve('Sunglasses order processed.')
+	  } else {
+		  reject('That item is sold out.')
+	  }
+})
+
+console.log(myPromise)
